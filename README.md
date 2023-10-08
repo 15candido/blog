@@ -9,4 +9,9 @@
 - Collection shorting and caching refresher
 
 ## The Blade 
+- The Absolute Basic
+- Blade Layout Two Ways
+- A Fews Tweaks and Considerations 
+
+## Working With Database 
 - Enveromment files and database connectios 
