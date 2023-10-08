@@ -6,7 +6,7 @@
             <a href="/posts/{{$post->slug}}">
                 <h1 class="font-black text-2xl">{{$post->title}}</h1>
             </a>
-            <a href="">
+            <a href="/categories/{{$post->category->slug}}">
                 <h3 class="font-bold text-xs uppercase">{{$post->category->name}}</h3>
             </a>
             <p class="leading-6">{!! $post->excerpt !!}</p>

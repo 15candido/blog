@@ -1,7 +1,7 @@
 <x-GuestLayout>
     <div class="max-w-7xl flex-col mx-auto my-6 space-y-6 p-2">
         <h1 class="font-bold text-2xl">{!! $post->title !!}</h1>
-        <a href="">
+        <a href="/categories/{{$post->category->slug}}">
             <h3 class="font-bold text-xs uppercase">{{$post->category->name}}</h3>
         </a>
         <p class="leading-6">
