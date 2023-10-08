@@ -15,3 +15,16 @@
 
 ## Working With Database 
 - Enveromment files and database connectios 
+- Migrate:The Absolute Basic
+- Eloquent and The Active Record Pattern
+- Make a Post Model and Migration 
+- Eloquet Updates and HTML Escaping 
+- 3 Ways to Mitegate Mass Assignment Vulnerabilities
+- Route Model Binding 
+- Your First Eloquent Relationship
+- Show All Post Associated With a Category
+- Clockwork and The N + 1 Problem
+- Database Seeding Saves Times  
+- Turbo Boost with Factories 
+- Views All Posts by an Author
+- Eager Load Relationship on an Existing Model
