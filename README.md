@@ -23,7 +23,7 @@
 - Route Model Binding 
 - Your First Eloquent Relationship
 - Show All Post Associated With a Category
-- Clockwork and The N + 1 Problem
+- Clockwork and The N + 1 Problem (Clockwork package)
 - Database Seeding Saves Times  
 - Turbo Boost with Factories 
 - Views All Posts by an Author
