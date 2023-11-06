@@ -6,9 +6,12 @@
             <a href="/posts/{{$post->slug}}">
                 <h1 class="font-black text-2xl">{{$post->title}}</h1>
             </a>
-            <a href="/categories/{{$post->category->slug}}">
-                <h3 class="font-bold text-xs uppercase">{{$post->category->name}}</h3>
-            </a>
+            <div class="flex space-x-2">
+                Writing By <a href="/authors/{{ $post->author->username }}" class="underline mx-1">{{ $post->author->name}} </a> in
+                <a href="/categories/{{$post->category->slug}}" class="flex items-center font-bold text-xs uppercase underline">
+                    {{ $post->category->name}}
+                </a>
+            </div>
             <p class="leading-6">{!! $post->excerpt !!}</p>
 
         </article>
