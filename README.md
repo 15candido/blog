@@ -28,3 +28,10 @@
 - Turbo Boost with Factories 
 - Views All Posts by an Author
 - Eager Load Relationship on an Existing Model
+
+## Integrate The Design 
+- Blade component ad CSS Grids 
+- Concert The Blog Post Page 
+- A Small JavaScript Dropdown Deteur
+- How to Extract a Dorpdown Blade Component 
+- Quick Tweaks and Clean-Up
