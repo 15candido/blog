@@ -1,15 +1,22 @@
 <x-GuestLayout>
-    <div class="max-w-7xl flex-col mx-auto my-6 space-y-6 p-2">
+    <div class="max-w-7xl flex-col mx-auto my-6 space-y-6">
         <h1 class="font-bold text-2xl">{!! $post->title !!}</h1>
-        <a href="/categories/{{$post->category->slug}}">
-            <h3 class="font-bold text-xs uppercase">{{$post->category->name}}</h3>
-        </a>
+        <div class="flex space-x-2">
+            Writing By <a href="#" class="underline mx-1">{{ $post->user->username}} </a> in
+            <a href="/categories/{{$post->category->slug}}" class="flex items-center font-bold text-xs uppercase underline">
+                {{ $post->category->name}}
+            </a>
+        </div>
+
         <p class="leading-6">
             {!! $post->body !!}
         </p>
-        <a href="/">
+
+        <a href="/" class="">
             <button class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded-md 
-            font-extrabold text-base uppercas">Go Back</button>
+            font-extrabold text-base uppercase">
+                Go Back
+            </button>
         </a>
 
     </div>
