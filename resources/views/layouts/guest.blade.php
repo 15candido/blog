@@ -15,18 +15,16 @@
 
 <body>
 
-    {{-- Menu navigation section --}}
+    <!-- Header section  -->
+    <x-partials.nav />
 
-    <head></head>
-
-    {{-- Body section --}}
-    <main class="antialiased w-full min-h-screen bg-white/80">
+    <!-- Main section  -->
+    <main class="antialiased w-full min-h-screen bg-white/80 px-6 py-8">
         {{ $slot }}
     </main>
 
-    {{-- Footer section --}}
-    <footer></footer>
-
+    <!-- Footer section  -->
+    <x-partials.footer />
 </body>
 
 </html>
