@@ -1,5 +1,5 @@
 <x-GuestLayout>
-    <div class="max-w-7xl flex mx-auto my-6 gap-6 p-2">
+    <!-- <div class="max-w-7xl flex mx-auto my-6 gap-6 p-2">
         @foreach ($posts as $post)
         <article class="w-full flex flex-col my-6 space-y-2 p-3 bg-white shadow-md shadow-gray-300 rounded-md hover:shadow-lg
             hover:shadow-gray-400">
@@ -16,5 +16,18 @@
 
         </article>
         @endforeach
+    </div> -->
+
+    <x-posts.post-carousel />
+
+    <div class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+
+        @if($posts->count())
+           <x-posts.post-grid :posts="$posts" /> 
+        @else
+            <p class="text-center">
+                No posts yet. Please came back later.
+            </p>
+        @endif
     </div>
 </x-GuestLayout>
