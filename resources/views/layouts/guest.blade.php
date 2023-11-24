@@ -17,7 +17,8 @@
 <body>
 
     <!-- Header section  -->
-    <x-partials.nav />
+   
+    @include('partials._nav')
 
     <!-- Main section  -->
     <main class="antialiased w-full min-h-screen bg-white/80 px-6 py-8">
@@ -25,7 +26,8 @@
     </main>
 
     <!-- Footer section  -->
-    <x-partials.footer />
+  
+    @include('partials._footer')
 </body>
 
 </html>

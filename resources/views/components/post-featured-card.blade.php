@@ -14,11 +14,6 @@
                      text-blue-300 text-xs uppercase font-semibold" style="font-size: 10px">
                         {{$post->category->name}}
                     </a>
-
-                    <!-- <a href="#" class="px-3 py-1 border border-red-300 rounded-full text-red-300 
-                    text-xs uppercase font-semibold" style="font-size: 10px">
-                        Updates
-                    </a> -->
                 </div>
 
                 <div class="mt-4">
@@ -37,18 +32,15 @@
             <div class="text-sm mt-2 space-y-4">
                
                 {!! $post->excerpt !!}
-              
-
-                <!-- <p class="mt-4">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p> -->
             </div>
 
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
                     <img src="/images/lary-avatar.svg" alt="Lary avatar">
                     <div class="ml-3">
-                        <h5 class="font-bold">{{$post->author->name}}</h5>
+                        <h5 class="font-bold">
+                            <a href="/?author={{ $post->author->username }}">{{$post->author->name}}</a>
+                        </h5>
                         <h6>Mascot at Laracasts</h6>
                     </div>
                 </div>
