@@ -28,6 +28,9 @@
     <!-- Footer section  -->
   
     @include('partials._footer')
+
+    <!-- Flash message -->
+   <x-flash />
 </body>
 
 </html>
