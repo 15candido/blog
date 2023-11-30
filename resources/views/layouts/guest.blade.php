@@ -30,7 +30,7 @@
     @include('partials._footer')
 
     <!-- Flash message -->
-   <x-flash />
+    <x-flash />
 </body>
 
 </html>
