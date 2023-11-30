@@ -15,21 +15,23 @@ class RegisterController extends Controller
     public function store()
     {
 
-    //    return request()->all(); 
-       
-     User::create(request()->validate([
+        //    return request()->all(); 
+
+        $user = User::create(request()->validate([
 
             'name'      => ['required', 'min:7', 'max:255'],
             'username'  => ['required', 'min:7', 'max:255', 'unique:users,username'],
-            'email'    =>  ['required','email:rfc', 'min:7', 'max:255', 'unique:users,email'],
+            'email'    =>  ['required', 'email:rfc', 'min:7', 'max:255', 'unique:users,email'],
             'password'  => ['required', 'min:9', 'max:255']
 
         ]));
-        
+
         // session()->flash(
         //     'success', 'Your account has been created!'
         // );
 
-        return redirect('/')->with('success', 'Your account has been created!'); 
+        auth()->login($user);
+
+        return redirect('/')->with('success', 'Your account has been created!');
     }
 }
