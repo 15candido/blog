@@ -17,13 +17,13 @@ class RegisterController extends Controller
 
     //    return request()->all(); 
        
-       User::create(request()->validate([
+     User::create(request()->validate([
 
             'name'      => ['required', 'min:7', 'max:255'],
-            'username'  => ['required', 'min:7', 'max:255'],
-            'email'    =>  ['required','email:rfc', 'min:7', 'max:255'],
-            'password'  => ['required', 'min:5', 'max:255']
-            
+            'username'  => ['required', 'min:7', 'max:255', 'unique:users,username'],
+            'email'    =>  ['required','email:rfc', 'min:7', 'max:255', 'unique:users,email'],
+            'password'  => ['required', 'min:9', 'max:255']
+
         ]));
 
         return redirect('/'); 
