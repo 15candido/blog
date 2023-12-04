@@ -18,37 +18,31 @@ class SessionsController extends Controller
     {
 
         // Validate the request
-
         $attributes = request()->validate([
             'email' => ['required', 'email'],
             'password' => ['required']
         ]);
 
         // Attempt to authenticate and login the user based on the provided credentials 
-        if (auth()->attempt($attributes)) {
+        if (!auth()->attempt($attributes)) {
 
-            // Session fixation to prevent 
-            session()->regenerate();
-
-            // Redirect with a success Flash message 
-            return redirect('/')->with('success', 'Hello welcome back! ');
+            // Authentication failed.
+            throw ValidationValidationException::withMessages([
+                'email' => 'Sorry, your provided credentials could not be verifeid!'
+            ]);
         }
 
-        // Authentication failed.
+        // Session fixation to prevent 
+        session()->regenerate();
 
-        throw ValidationValidationException::withMessages([
-            'email' => 'Sorry, your provided credentials could not be verifeid!'
-        ]);
-
-        // return back()
-        //     ->withInput()
-        //     ->withErrors(['email' => 'Sorry, your porvided credentials could not be verified']);
+        // Redirect with a success Flash message 
+        return redirect('/')->with('success', 'Hello welcome back! ');
     }
 
     public function destroy()
     {
 
         auth()->logout();
-        return redirect('/')->with('success', 'Goodba!');
+        return redirect('/')->with('success', 'Goodbey!');
     }
 }
