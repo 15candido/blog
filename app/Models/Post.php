@@ -11,13 +11,20 @@ class Post extends Model
 
     protected $fillable = ['user_id', 'category_id', 'title', 'slug', 'excerpt', 'body'];
 
-    // Relationships 
-    function category()
+    // Relationships
+
+    public function comments()
+    {
+
+        return $this->hasMany(Comment::class);
+    }
+
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    function author()
+    public function author()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
@@ -27,27 +34,38 @@ class Post extends Model
     {
 
         // Arrow function 
-        $query->when($filters['search'] ?? false, fn ($query, $search) =>
-            
-            $query->where(fn($query) =>
-            
+        $query->when(
+            $filters['search'] ?? false,
+            fn ($query, $search) =>
+
+            $query->where(
+                fn ($query) =>
+
                 $query->where('title', 'like', '%' . $search . '%')
-                ->orWhere('body', 'like', '%' . $search . '%')
+                    ->orWhere('body', 'like', '%' . $search . '%')
             )
         );
 
-        $query->when($filters['category'] ?? false, fn($query, $category) =>
+        $query->when(
+            $filters['category'] ?? false,
+            fn ($query, $category) =>
 
-            $query->whereHas('category', fn($query) =>
+            $query->whereHas(
+                'category',
+                fn ($query) =>
 
                 $query->where('slug', $category)
-                
+
             )
         );
 
-        $query->when($filters['author'] ?? false, fn($query, $author) =>
-        
-            $query->whereHas('author', fn($query) =>
+        $query->when(
+            $filters['author'] ?? false,
+            fn ($query, $author) =>
+
+            $query->whereHas(
+                'author',
+                fn ($query) =>
 
                 $query->where('username', $author)
 
