@@ -49,6 +49,13 @@
                         {!! $post->body !!}
                     </div>
                 </div>
+
+                <div class="col-span-8 md:col-start-5 space-y-6">
+                   <x-post-comment />
+                   <x-post-comment />
+                   <x-post-comment />
+                   <x-post-comment />
+                </div>
             </article>
         </main>
     </section>
